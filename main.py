@@ -12,7 +12,7 @@ st.set_page_config(
         layout="centered"
     )
 
-
+#  SQLite DB connection
 con = sl.connect('data.db')
 
 ENCODE_LENGTH = 6
@@ -69,7 +69,14 @@ def save_to_STOL(code, url, time):
         con.executemany(sql, data)
 
 def encode(long_url : str) -> str:
-    long_url = quote(long_url, safe=":/?=%&.")
+    #  Check for valid URL
+    parse_result = urlparse(long_url)
+    if not parse_result.scheme and not parse_result.netloc:
+        er = "400 Oh Snap!! We are unable to parse the URL. 😞"
+        st.markdown(""" <p><span align="center">{}</span></p>""".format(er),unsafe_allow_html=True)
+        return None
+
+    long_url = quote(long_url, safe=":/?=%&.-_")
     while(not exits_in_LTOS(long_url)):
         code = "".join([ random.choice(encode_char_choice) for _ in range(ENCODE_LENGTH)])
         if not exits_in_STOL(code):
