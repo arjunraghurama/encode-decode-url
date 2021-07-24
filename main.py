@@ -15,7 +15,6 @@ st.set_page_config(
 
 con = sl.connect('data.db')
 
-state = SessionState.get(long_url_to_short_url = {}, short_url_to_long_url={})
 ENCODE_LENGTH = 6
 encode_char_choice = "0123456789abcdefghijklmnopqrstuvwxyABCDEFGHIJKLMNOPQRSTUVWXY"
 
