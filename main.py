@@ -87,10 +87,10 @@ def encode(long_url : str) -> str:
 
 def decode(short_url : str) -> str:
     #  Check for valid code
-        if len(url_or_code) < ENCODE_LENGTH and len(url_or_code) > ENCODE_LENGTH:
+    if len(url_or_code) < ENCODE_LENGTH and len(url_or_code) > ENCODE_LENGTH:
             raise KeyError
-        for ch in url_or_code:
-            if ch not in encode_char_choice:
+    for ch in url_or_code:
+        if ch not in encode_char_choice:
                 raise KeyError
                 
     short_url = quote(short_url)
