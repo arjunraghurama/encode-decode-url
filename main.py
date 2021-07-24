@@ -2,7 +2,7 @@ import SessionState
 import streamlit as st
 import random
 import sqlite3 as sl
-from urllib.parse import quote
+from urllib.parse import quote, urlparse
 import datetime
 import sqlite3 as sl
 
