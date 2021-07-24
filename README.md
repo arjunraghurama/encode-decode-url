@@ -9,3 +9,5 @@ Encodes an URL into 6 character string
 
 ## Decode
 Decodes a 6-character string back to the URL
+
+### URL is persisted for a period of 30 days
