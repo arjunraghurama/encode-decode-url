@@ -18,8 +18,8 @@ con = sl.connect('data.db')
 ENCODE_LENGTH = 6
 encode_char_choice = "0123456789abcdefghijklmnopqrstuvwxyABCDEFGHIJKLMNOPQRSTUVWXY"
 
-st.write("Encodes a URL to base64 code")
-st.write("Example: 'https://www.google.com/' is encoded as 'rRJSOh'")
+st.title("Encodes an URL to base64 code")
+st.write("Example: 'https://www.example.com/' is encoded as 'rR3jOh'")
 url_or_code = st.text_input("URL or Code")
 _,en,_,de,_ = st.beta_columns([4,1,1,1,5])
 
